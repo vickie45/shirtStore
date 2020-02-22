@@ -198,7 +198,7 @@ class CheckoutView(View):
                 payment_option = form.cleaned_data.get('payment_option')
 
                 if payment_option == 'S':
-                    # return redirect('core:payment', payment_option='stripe')
+                    return redirect('core:payment', payment_option='stripe')
                     pass
                 elif payment_option == 'P':
                     return redirect('core:payment', payment_option='paypal')
@@ -348,8 +348,8 @@ class PaymentView(View):
         return redirect("/payment/stripe/")
 
 
-def paymentView(request):
-    return HttpResponse('under processing')
+# def paymentView(request):
+#     return HttpResponse('under processing')
 
 
 class HomeView(ListView):
